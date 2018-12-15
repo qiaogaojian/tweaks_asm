@@ -3,7 +3,7 @@ assume cs:code
 code segment
 
             mov ax,0
-            mov cx,100
+            mov cx,0
 addNumber:  add ax,cx
             loop addNumber
 
