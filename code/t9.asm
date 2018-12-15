@@ -5,7 +5,7 @@ code segment
             mov ax,20H
             mov ds,ax
 
-            mov cx,3FH
+            mov cx,40H
             mov bx,0
 
 copyData:   mov al,bl
