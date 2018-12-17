@@ -1,7 +1,7 @@
 assume cs:code
 
 data segment
-    db      'welcome to mams!'
+    db      'Welcome To Mams!'
     db      '****************'
 data ends
 
@@ -30,6 +30,15 @@ code segment
                 add si,2
                 add di,2
                 loop copyData
+
+                mov cx,16
+                mov si,16
+
+     smallCh:   mov dl,es:[si]
+                or  dl,00100000B
+                mov es:[si],dl
+                inc si
+                loop smallCh
 
                 int 21H
 
