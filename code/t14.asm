@@ -8,18 +8,32 @@ b segment
     dw  0,0,0,0,0,0,0,0
 b ends
 
+stack segment stack
+    dw  0,0,0,0,0,0,0,0
+    dw  0,0,0,0,0,0,0,0
+stack ends
+
 code segment
 
     start:
             mov cx,8
             mov bx,0
 
+            mov ax,a
+            mov ds,ax
+
+ pushStack: push ds:[bx]
+
+            add bx,2
+            loop pushStack
+
+            mov cx,8
+            mov bx,0
+
             mov ax,b
             mov es,ax
 
-            mov ax,a
-            mov ds,ax
-   replace: mov dl,ds:[bx]
+   replace: pop dx
             mov es:[bx],dl
 
             add bx,2
