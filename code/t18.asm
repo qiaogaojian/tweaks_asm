@@ -22,7 +22,7 @@ code segment
             mov cx,3
             inner:  mov dl,ds:[bx+si]
                     and dl,11011111B
-                    mov ds:[bx+si],dl
+                    mov es:[bx+si],dl
                     inc si
                     loop inner
             add bx,16
