@@ -31,6 +31,7 @@ code segment
                 add dl,ds:[bx]
 
                 mov es:[bx],dl
+                inc bx
                 loop addLoop
 
                 mov ax,4c00H
