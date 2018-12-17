@@ -13,7 +13,7 @@ code segment
             add cx,1
             inc bx
             loop s
-        ok: dec bx
+        ok: dec bx    ; dec 和 inc 相反  减1
             mov dx,bx
 
             mov ax,4c00h
