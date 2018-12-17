@@ -34,6 +34,8 @@ code segment
                 mov cx,16
                 mov si,16
 
+    ; 转换成大写，就用and 11011111b
+    ; 转换成小写，就用or 00100000b
      smallCh:   mov dl,es:[si]
                 or  dl,00100000B
                 mov es:[si],dl
